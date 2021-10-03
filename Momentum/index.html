@@ -5,11 +5,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <title>Momentum</title>
+    <title>Document</title>
   </head>
   <body>
-    <div id="greeting"></div>
-
-    <script src="script.js"></script>
+    <form id="login_form" class="hidden">
+      <input
+        required
+        maxlength="15"
+        type="text"
+        placeholder="What is your name?"
+      />
+      <input type="submit" value="Log In" />
+    </form>
+    <div id="greeting" class="hidden">
+      <h1 id="greetingUser">h1</h1>
+      <h2 id="banner">h1</h1>
+      <h2 id="clock">h2</h2>
+    </div>
   </body>
+  <script src="script.js"></script>
 </html>

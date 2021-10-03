@@ -1,6 +1,9 @@
 const loginForm = document.querySelector("#login_form");
 const loginInput = document.querySelector("#login_form input");
 const greeting = document.querySelector("#greeting");
+const greetingUser = document.querySelector("#greetingUser");
+const banner = document.querySelector("#banner");
+const clock = document.querySelector("#clock");
 
 const HIDDEN_CLASSNAME = "hidden";
 const USERNAME_KEY = "username";
@@ -63,8 +66,32 @@ function getClock() {
   const nowMinutes = String(time.getMinutes()).padStart(2, "0");
   const nowSeconds = String(time.getSeconds()).padStart(2, "0");
 
-  greeting.innerText = `${nowMonth}. ${nowDay} \n ${nowHour} : ${nowMinutes} : ${nowSeconds}`;
+  clock.innerText = `${nowMonth}. ${nowDay} \n ${nowHour} : ${nowMinutes} : ${nowSeconds}`;
 }
 
-getClock();
-setInterval(getClock, 1000);
+function onLoginSubmit(event) {
+  event.preventDefault();
+  loginForm.classList.add(HIDDEN_CLASSNAME);
+  const username = loginInput.value;
+  localStorage.setItem(USERNAME_KEY, username);
+  paintGreetings(username);
+}
+
+function paintGreetings(username) {
+  greetingUser.innerText = `Hello ${username}`;
+  banner.innerText = `Currnet Time`;
+  greeting.classList.remove(HIDDEN_CLASSNAME);
+  getClock();
+  setInterval(getClock, 1000);
+}
+
+const savedUsername = localStorage.getItem(USERNAME_KEY);
+
+if (savedUsername === null) {
+  //show form
+  loginForm.classList.remove(HIDDEN_CLASSNAME);
+  loginForm.addEventListener("submit", onLoginSubmit);
+} else {
+  //show the greetings
+  paintGreetings(savedUsername);
+}
