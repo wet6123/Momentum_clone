@@ -18,11 +18,19 @@
       <input type="submit" value="Log In" />
     </form>
     <div id="greeting" class="hidden">
+      <h3 id="clock">h1</h3>
       <h1 id="greetingUser">h1</h1>
-      <h2 id="banner">h1</h1>
-      <h2 id="clock">h2</h2>
+      <form id="todo-form">
+        <input
+          type="text"
+          placeholder="Write a To Do and Press Enter"
+          required
+        />
+      </form>
+      <ul id="todo-list"></ul>
     </div>
   </body>
   <script src="login.js"></script>
   <script src="clock.js"></script>
+  <script src="todo.js"></script>
 </html>

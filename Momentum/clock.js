@@ -1,4 +1,3 @@
-const banner = document.querySelector("#banner");
 const clock = document.querySelector("#clock");
 
 function getClock() {
@@ -62,6 +61,5 @@ function getClock() {
   clock.innerText = `${nowMonth}. ${nowDay} \n ${nowHour} : ${nowMinutes} : ${nowSeconds}`;
 }
 
-banner.innerText = `Currnet Time`;
 getClock();
 setInterval(getClock, 1000);
