@@ -50,6 +50,26 @@ h1 {
   color: rgba(255, 255, 255, 0.801);
 }
 
+#input2 {
+  margin-top: 250px;
+  width: 500px;
+  height: 50px;
+  background-color: rgba(0, 0, 0, 0.308);
+  border: 3px solid rgba(0, 0, 0, 0.411);
+  color: white;
+  font-size: 30px;
+}
+#input2::placeholder {
+  color: rgba(255, 255, 255, 0.801);
+}
+#submitButton {
+  height: 60px;
+  background-color: rgba(0, 0, 0, 0.308);
+  border: 3px solid rgba(0, 0, 0, 0.411);
+  color: white;
+  font-size: 30px;
+}
+
 .hidden {
   display: none;
 }
